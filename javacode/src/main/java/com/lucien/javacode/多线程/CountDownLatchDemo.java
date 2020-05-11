@@ -26,16 +26,16 @@ public class CountDownLatchDemo {
     public static void main(String[] args) {
         CountDownLatch latch = new CountDownLatch(10);
         // 执行线程池任务
-        executor.execute(new DemoTask("Task A", 2000, latch));
-        executor.execute(new DemoTask("Task B", 2000, latch));
-        executor.execute(new DemoTask("Task C", 2000, latch));
-        executor.execute(new DemoTask("Task D", 2000, latch));
-        executor.execute(new DemoTask("Task E", 2000, latch));
-        executor.execute(new DemoTask("Task F", 2000, latch));
-        executor.execute(new DemoTask("Task G", 2000, latch));
-        executor.execute(new DemoTask("Task H", 2000, latch));
-        executor.execute(new DemoTask("Task I", 2000, latch));
-        executor.execute(new DemoTask("Task J", 2000, latch));
+        executor.execute(new DemoTask("DelayEvent A", 2000, latch));
+        executor.execute(new DemoTask("DelayEvent B", 2000, latch));
+        executor.execute(new DemoTask("DelayEvent C", 2000, latch));
+        executor.execute(new DemoTask("DelayEvent D", 2000, latch));
+        executor.execute(new DemoTask("DelayEvent E", 2000, latch));
+        executor.execute(new DemoTask("DelayEvent F", 2000, latch));
+        executor.execute(new DemoTask("DelayEvent G", 2000, latch));
+        executor.execute(new DemoTask("DelayEvent H", 2000, latch));
+        executor.execute(new DemoTask("DelayEvent I", 2000, latch));
+        executor.execute(new DemoTask("DelayEvent J", 2000, latch));
         try {
             latch.await();// 等待所有人任务结束
         } catch (InterruptedException e) {
