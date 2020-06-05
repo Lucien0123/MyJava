@@ -1,10 +1,8 @@
 package com.lucien.javacode.NIO用法;
 
-import com.alibaba.rocketmq.shade.io.netty.channel.unix.DomainSocketAddress;
-
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.RandomAccessFile;
+import java.net.SocketAddress;
 import java.nio.ByteBuffer;
 import java.nio.CharBuffer;
 import java.nio.channels.*;
@@ -34,18 +32,16 @@ public class FileChannelTest {
                 // buffer.compact(); // 清空已经读过的buffer内容，可以写入状态
             }
             aFileAccess.close(); // 关闭文件流
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     void test1() {
-        SocketChannel socketChannel = null;
+        SocketChannel socketChannel;
         try {
             socketChannel = SocketChannel.open()
-                    .bind(new DomainSocketAddress(""));
+                    .bind(new DomainSocketAddress());
 
             Selector selector = Selector.open();
             SelectionKey selectionKey = socketChannel.register(selector, SelectionKey.OP_ACCEPT | SelectionKey.OP_CONNECT | SelectionKey.OP_READ | SelectionKey.OP_WRITE);
@@ -81,6 +77,10 @@ public class FileChannelTest {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+    }
+
+    private class DomainSocketAddress extends SocketAddress {
 
     }
 }

@@ -1,14 +1,14 @@
 package com.lucien.javacode.Optional用法;
 
-import cn.lucien.javademo.Optional用法.model.SubModel;
-import cn.lucien.javademo.Optional用法.model.TestModel;
+import com.lucien.javacode.Optional用法.model.SubModel;
+import com.lucien.javacode.Optional用法.model.TestModel;
 import org.apache.commons.lang3.StringUtils;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.Assert.assertTrue;
 
 /**
  * 参考博客地址：https://www.cnblogs.com/zhangboyu/p/7580262.html
